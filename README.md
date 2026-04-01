@@ -5,10 +5,27 @@ A macOS CLI tool that records system audio using [BlackHole](https://github.com/
 ## Prerequisites
 
 - macOS
-- [Go](https://go.dev/dl/) 1.25+
 - [Homebrew](https://brew.sh/)
 
 ## Installation
+
+2 ways to install:
+
+### Download a release
+
+Download the latest `.tar.gz` from the [Releases](https://github.com/swhitake81/record-anywhere/releases) page, then:
+
+```bash
+tar -xzf record-anywhere-*.tar.gz
+sudo mv record-anywhere /usr/local/bin/
+record-anywhere setup
+```
+
+The `setup` command installs the required system dependencies (BlackHole 2ch, PortAudio, ffmpeg) via Homebrew.
+
+### Build from source
+
+Requires [Go](https://go.dev/dl/) 1.25+.
 
 ```bash
 git clone https://github.com/swhitake81/record-anywhere.git
@@ -16,7 +33,7 @@ cd record-anywhere
 sudo make setup
 ```
 
-This installs the required system dependencies (BlackHole 2ch, PortAudio, ffmpeg) via Homebrew, builds the binary, and installs it to `/usr/local/bin/`.
+This installs system dependencies via Homebrew, builds the binary, and installs it to `/usr/local/bin/`.
 
 To uninstall:
 
@@ -46,11 +63,11 @@ This starts recording system audio in the background. The audio source is BlackH
 
 **Options:**
 
-| Flag         | Description                              | Default              |
-|--------------|------------------------------------------|----------------------|
-| `--name`     | Recording file name (without extension)  | Timestamp            |
-| `--format`   | Output format: `mp3` or `wav`            | From config          |
-| `--duration`  | Recording duration (e.g., `30m`, `1h`)  | From config          |
+| Flag         | Description                             | Default     |
+| ------------ | --------------------------------------- | ----------- |
+| `--name`     | Recording file name (without extension) | Timestamp   |
+| `--format`   | Output format: `mp3` or `wav`           | From config |
+| `--duration` | Recording duration (e.g., `30m`, `1h`)  | From config |
 
 **Examples:**
 
@@ -87,7 +104,7 @@ record-anywhere config set default_duration 1h
 **Config keys:**
 
 | Key                | Description                          |
-|--------------------|--------------------------------------|
+| ------------------ | ------------------------------------ |
 | `output_dir`       | Directory where recordings are saved |
 | `default_format`   | Default output format (`mp3`/`wav`)  |
 | `default_duration` | Default recording duration           |
