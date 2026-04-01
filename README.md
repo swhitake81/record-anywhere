@@ -41,6 +41,17 @@ To uninstall:
 sudo make uninstall
 ```
 
+## Audio Setup
+
+record-anywhere captures system audio through BlackHole, which requires a Multi-Output Device:
+
+1. Open **Audio MIDI Setup** (search for it in Spotlight)
+2. Click the **+** button in the bottom left and select **Create Multi-Output Device**
+3. Check both your normal output (e.g., MacBook Pro Speakers or headphones) and **BlackHole 2ch**
+4. Go to **System Settings** → **Sound** → **Output** and select the **Multi-Output Device**
+
+This routes your system audio to both your speakers and BlackHole so record-anywhere can capture it.
+
 ## Initial Configuration
 
 Before your first recording, set up your output directory:
