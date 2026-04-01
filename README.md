@@ -38,7 +38,11 @@ This installs system dependencies via Homebrew, builds the binary, and installs 
 To uninstall:
 
 ```bash
+# If installed from source
 sudo make uninstall
+
+# If installed from a release
+sudo rm /usr/local/bin/record-anywhere
 ```
 
 ## Audio Setup
@@ -125,5 +129,5 @@ record-anywhere config set default_duration 1h
 If you need to reinstall the system dependencies separately:
 
 ```bash
-make deps
+record-anywhere setup
 ```
