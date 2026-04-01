@@ -11,7 +11,7 @@ A macOS CLI tool that records system audio using [BlackHole](https://github.com/
 ## Installation
 
 ```bash
-git clone https://github.com/youruser/record-anywhere.git
+git clone https://github.com/swhitake81/record-anywhere.git
 cd record-anywhere
 sudo make setup
 ```
