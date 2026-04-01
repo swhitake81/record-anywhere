@@ -19,7 +19,8 @@ jobs:
       - name: Build
         run: |
           brew install portaudio
-          go build -o record-anywhere-${{ github.ref_name }} .
+          go build -o record-anywhere .
+          tar -czf record-anywhere-${{ github.ref_name }}-darwin-arm64.tar.gz record-anywhere
       - uses: softprops/action-gh-release@v2
         with:
-          files: record-anywhere-${{ github.ref_name }}
+          files: record-anywhere-${{ github.ref_name }}-darwin-arm64.tar.gz
